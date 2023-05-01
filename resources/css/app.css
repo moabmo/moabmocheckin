@@ -1,0 +1,10 @@
+.pagination {
+    margin-top: 20px;
+  }
+  
+  .pagination > li > a,
+  .pagination > li > span {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
