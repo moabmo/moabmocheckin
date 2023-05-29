@@ -1,54 +1,36 @@
 @extends('layouts.app')
 <style>
-        table{
+    table{
             margin-right: auto;
             margin-left:auto;
-            background-color: grey;
-            border-collapse: collapse;
-            text: bold;
+            background-color: lightgrey;
             width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-radius:10px;  
+            /* font-weight: bold; */
         }
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: white;
+            border: solid green 1px ;
+            border-left: none;
+            border-right: none;
+            border-radius:10px;
+            /* color: #000; */
         }
-        td{
-            border: groove blue 5px ;
+        td, th{
+            padding: 0.2%;
+            border-right: 1px solid black;
         }
-        /* Pagination */
-        .pagination {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
+        th{
+            border: 1px solid black;
         }
-
-        .pagination li {
-            display: inline-block;
-            margin-right: 5px;
-            padding: 5px;
-            border: 1px solid #ccc;
+        .custom-list {
+            list-style: none;
         }
-
-        .pagination li a {
-            display: block;
-            text-align: center;
-            color: #333;
+        li{
+            font-weight: bolder;
         }
-
-        .pagination li.active {
-            background-color: #007bff;
-        }
-
-        .pagination li.active a {
-            color: #fff;
-        }
-
-        .pagination li.disabled {
-            color: #ccc;
-            pointer-events: none;
-        }
-
-
-
 </style>
 @section('content')
 <div class="container">
@@ -58,6 +40,8 @@
                 <div class="card-header">{{ __('Trainees Admission  ') }}</div>
 
                 <div class="card-body">
+
+                </div>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -66,25 +50,25 @@
                     List of all Trainees
                    
                     <table>
-    <thead>
+    <thead style="background-color: blue; font-size: 120%; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">
         <tr>
-            <th>Code</th>
-            <th>Polling Station</th>
-            <th>Name</th>
-            <th>National Id/Passport</th>
-            <th>Phone Number</th>
-            <th>ward</th>
+            <th style="border-right: 1px solid black;">Code</th>
+            <th style="border-right: 1px solid black;">Polling Station</th>
+            <th style="border-right: 1px solid black;">Name</th>
+            <th style="border-right: 1px solid black;">National Id/Passport</th>
+            <th style="border-right: 1px solid black;">Phone Number</th>
+            <th style="border-right: 1px solid black;">ward</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($trainees as $trainee)
         <tr>
-            <td>{{ $trainee->id }}</td>
-            <td>{{ $trainee->polling_station }}</td>
-            <td>{{ $trainee->name }}</td>
-            <td>{{ $trainee->national_id }}</td>
-            <td>{{ $trainee->phone }}</td>
-            <td>{{ $trainee->ward }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->id }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->polling_station }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->name }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->national_id }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->phone }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->ward }}</td>
         </tr>
         @endforeach
     </tbody>
@@ -98,6 +82,7 @@
         </div>
     </div>
 </div>
+
 
 
 @endsection

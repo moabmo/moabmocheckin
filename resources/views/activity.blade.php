@@ -125,6 +125,5 @@
   </div>
 </div>
         </div>
-            &copy; 2023
     </body>
 </html>

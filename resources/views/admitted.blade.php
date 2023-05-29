@@ -6,12 +6,12 @@
         table{
             margin-right: auto;
             margin-left:auto;
-            background-color: #007eff;
+            background-color: lightgrey;
             width: 100%;
             border-collapse: collapse;
             border-spacing: 0;
             border-radius:10px;  
-            font-weight: bold;
+            /* font-weight: bold; */
         }
         tr:nth-child(even) {
             background-color: white;
@@ -19,7 +19,7 @@
             border-left: none;
             border-right: none;
             border-radius:10px;
-            color: #007eff;
+            /* color: #000; */
         }
         td, th{
             padding: 0.2%;
@@ -45,27 +45,30 @@
 
                 <div class="card-body">
                 <table>
-    <thead>
-        <tr>
-            <th>Code</th>
-            <th>Polling Station</th>
-            <th>Name</th>
-            <th>National Id/Passport</th>
-            <th>Phone Number</th>
-            <th>Ward</th>
-            <th>Admitted By</th>
-        </tr>
-    </thead>
+                    
+            <thead style="background-color: blue; font-size: 120%; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                <tr>
+                    <th style="border-right: 1px solid black;">Code</th>
+                    <th style="border-right: 1px solid black;">Polling Station</th>
+                    <th style="border-right: 1px solid black;">Name</th>
+                    <th style="border-right: 1px solid black;">National Id/Passport</th>
+                    <th style="border-right: 1px solid black;">Phone Number</th>
+                    <th style="border-right: 1px solid black;">Ward</th>
+                    <th style="border-right: 1px solid black;">Admitted By</th>
+                </tr>
+            </thead>
+
     <tbody>
         @foreach ($trainees as $trainee)
         <tr>
-            <td>{{ $trainee->id }})</td>
-            <td>{{ $trainee->polling_station }}</td>
-            <td>{{ $trainee->name }}</td>
-            <td>{{ $trainee->national_id }}</td>
-            <td>{{ $trainee->phone }}</td>
-            <td>{{ $trainee->ward }}</td>
-            <td>{{ $trainee->admitted_by }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->id }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->polling_station }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->name }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->national_id }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->phone }}</td>
+            <td style="border-right: 1px solid black;">{{ $trainee->ward }}</td>
+            <td style="background-color: #00FFC7; color:blue;">{{ $trainee->admitted_by }}</td>
+
         </tr>
         @endforeach
     </tbody>

@@ -8,6 +8,14 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+
+                
+@if(session('success'))
+    <div class="alert alert-success" style="color:green;">
+        {{ session('success') }}
+    </div>
+@endif
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

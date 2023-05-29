@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card">
-        <div class="card-header">{{ __('Register') }}</div>
-
+    
+@auth
+@if (Auth::user()->admin_registered)
+<div class="card">
+<div class="card-header">{{ __('Register') }}</div>
         <div class="card-body">
             <form method="POST" action="{{ route('admin.register.submit') }}">
                 @csrf
@@ -62,4 +64,15 @@
             </form>
         </div>
     </div>
+    @else
+    <p>Access denied!</p>
+    @endif
+    @else
+        <div class="a">
+            <a href="{{ route('admin.login') }}">
+                <button>Login as admin to access this page.</button>
+            </a>
+        </div>
+    @endauth
+
 @endsection
